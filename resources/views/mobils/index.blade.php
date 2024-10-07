@@ -4,6 +4,12 @@
     <h1>Daftar Mobil</h1>
     <a href="{{ route('mobils.create') }}">Tambah Mobil</a>
 
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <table>
         <thead>
             <tr>
@@ -29,8 +35,10 @@
                             @method('DELETE')
                             <button type="submit">Hapus</button>
                         </form>
+                       
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    <a href="{{ route('speks.index') }}" class="btn btn-info">Lihat Spek</a>

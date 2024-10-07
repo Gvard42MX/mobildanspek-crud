@@ -1,8 +1,14 @@
+
 @extends('layouts.app')
 
 @section('content')
     <h1>Daftar Spesifikasi</h1>
     <a href="{{ route('speks.create') }}">Tambah Spesifikasi</a>
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <table>
         <thead>
@@ -36,3 +42,4 @@
         </tbody>
     </table>
 @endsection
+<a href="{{ route('mobils.index') }}" class="btn btn-info">kembali ke mobil</a>
